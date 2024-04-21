@@ -24,7 +24,6 @@ public class ProductOrdersTest extends BaseTest{
 	public String testDataName=getPropertiesValue("testData");
 	public String testDataSheetName=getPropertiesValue("testDataSheetName");
 
-
 	@BeforeClass 
 	public void loginApplication() throws Exception {
 		HomePage.launchApplication(browserType,applicationUrl);
@@ -96,6 +95,5 @@ public class ProductOrdersTest extends BaseTest{
 		closeBrowser();
 
 	}
-
 
 }

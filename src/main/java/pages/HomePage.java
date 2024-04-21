@@ -13,13 +13,16 @@ public class HomePage extends BaseTest{
 
 	@FindBy(id = "loginBtn")
 	public static WebElement loginButton;
-	
+
 	@FindBy(xpath  = "//BUTTON[@aria-label='Account settings']/descendant::DIV[.='H']")
 	public static WebElement mySettings;
-	
+
 	@FindBy(xpath = "//*[normalize-space(.)='Logout']")
 	public static WebElement logoutButton;
-	
+
+	//@FindBy(xpath = "//DIV[normalize-space(.)='Voucher']")
+	@FindBy(xpath = "//*[@id='root']/section[5]/article/div[2]/div[1]/div[3]/a")
+	public static WebElement voucherButton;
 
 	public HomePage(WebDriver webdriver) {
 		driver=webdriver;
@@ -28,7 +31,7 @@ public class HomePage extends BaseTest{
 	//Launch the browser with respect to the type of browser 
 	//Input : Browser Type
 	public static void launchBrowser(String browserType) throws Exception {
-		 setBrowser(browserType);
+		setBrowser(browserType);
 	}
 
 	//Launch the browser and application / Verify the welcome Page
@@ -42,12 +45,18 @@ public class HomePage extends BaseTest{
 		welcomePageText.isDisplayed();
 		loginButton.click();
 	}
-	
+
 	public static void userLogout() {
 		mySettings.click();
 		delay(5);
 		logoutButton.click();
-		
+
 	}
 
+	//Navigate to voucher page
+	public static void navigateToVoucherPage() throws Exception {
+		moveToElement(voucherButton);
+		delay(4);
+		voucherButton.click();
+	}
 }

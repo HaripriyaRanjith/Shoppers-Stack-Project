@@ -80,11 +80,16 @@ public class BaseTest {
 	
 	//Enables driver to move to a particular element
 	public static void moveToElement(WebElement element) throws Exception {
-		
-		Thread.sleep(1000);
+		delay(3);
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).perform();
-		
 	}
+	
+	public static void mouseClick(WebElement element) throws Exception {
+		
+		Actions actions = new Actions(driver);
+		actions.click(element);
+	}
+	
 
 }

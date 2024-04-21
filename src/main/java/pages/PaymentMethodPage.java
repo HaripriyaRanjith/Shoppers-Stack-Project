@@ -97,8 +97,9 @@ public class PaymentMethodPage extends BaseTest {
 		driver.switchTo().frame(iframeNetbankingPayment2);
 		paynowButton.click();
 		
-		delay(10);
+		delay(12);
 		driver.navigate().to("https://www.shoppersstack.com/place-order");
+		delay(2);
 		String orderConfirmation=orderConfirmedText.getText();
 		String orderNumber=orderNumberText.getText();
 		

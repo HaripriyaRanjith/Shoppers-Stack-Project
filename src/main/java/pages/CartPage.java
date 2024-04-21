@@ -31,7 +31,4 @@ public class CartPage extends BaseTest{
 		delay(5);
 	}
 
-
-
-
 }
